@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {# {{ encore_entry_script_tags('app') }} #}
+        {% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+<div class="nav">
+    <ul>
+        <li><a href="{{ path('schedule_index') }}">Расписание</a></li>
+        <li><a href="{{ path('admin_index') }}">Админ панель</a></li>
+        {# <li><a href="{{ path('days_index') }}">Дни</a></li> #}
+        {# <li><a href="{{ path('teacher_index') }}">Учителя</a></li> #}
+        {# <li><a href="{{ path('lesson_index') }}">Предметы</a></li> #}
+    </ul>
+</div>
+{% block body %}
+
+{% endblock %}
+<style>
+    #schedule {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        border: 1px solid black;
+        background: #a4d4ff;
+        border-radius: 50px;
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    td {
+        background: #ddeeff;
+        border-radius: 5px;
+        box-shadow: 4px 6px 8px 0px #0000004f;
+    }
+
+    table {
+        border-spacing: 10px;
+    }
+
+    .hasSchedule {
+        background: #ffd29a;
+    }
+
+    .notHasSchedule {
+        background: #ccaeae;
+    }
+    .nav{
+        background: #a4d4ff;
+        width: 30vw;
+        height: 10vh;
+        border-radius: 1vh;
+    }
+    ul {
+        padding-top: 3vh;
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+
+    }
+</style>
+</body>
+</html>

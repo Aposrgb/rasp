@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Days{% endblock %}
+
+{% block body %}
+    <h1>Create new Days</h1>
+    <p style="color:red;">{{ error }}</p>
+    {{ include('days/_form.html.twig') }}
+
+    <a href="{{ path('days_index') }}">back to list</a>
+{% endblock %}

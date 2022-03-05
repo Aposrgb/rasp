@@ -1,0 +1,25 @@
+
+###> symfony/framework-bundle ###
+.env.*.local
+/school-rasp/.env.local
+/school-rasp/.env.local.php
+/school-rasp/.env.*.local
+/school-rasp/config/secrets/prod/prod.decrypt.private.php
+/school-rasp/public/bundles/
+/school-rasp/public/import/
+/school-rasp/var/
+/school-rasp/vendor/
+/vendor/
+###< symfony/framework-bundle ###
+.idea/*
+###> symfony/phpunit-bridge ###
+/school-rasp/.phpunit
+/school-rasp/.phpunit.result.cache
+/school-rasp/phpunit.xml
+/school-rasp/logs
+/logs
+/school-rasp/symfony
+/symfony
+.DS_Store
+###< symfony/phpunit-bridge ###
+/school-rasp/public/uploads/

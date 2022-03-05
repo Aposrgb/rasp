@@ -1,0 +1,282 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Schedule index{% endblock %}
+
+{% block body %}
+    <h1>Расписание для {{ scheduleName }} класса</h1>
+    <div id="schedule">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Урок</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in 1..7 %}
+                <tr>
+                    <td>{{ i }} <br> Начало-конец<br>{{ i+7 }}:00-{{ i+7 }}:45</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <td> Понедельник</td>
+            </tr>
+            </thead>
+            {% for day in monday %}
+                {% if day.teacher == null %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="notHasSchedule"> Предмет : <br>Преподаватель:</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br> Преподаватель:
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                {% else %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : <br>
+                                Преподаватель: {{ day.teacher.name }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br>
+                                Преподаватель: {{ day.teacher.name }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% for i in 1..7 %}
+                    <tbody>
+                    <tr>
+                        <td class="notHasSchedule">Предмет : <br> Преподаватель:</td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <td> Вторник</td>
+            </tr>
+            </thead>
+            {% for day in tuesday %}
+                {% if day.teacher == null %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="notHasSchedule"> Предмет : <br>Преподаватель:</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br> Преподаватель:
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                {% else %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : <br>
+                                Преподаватель: {{ day.teacher.name }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br>
+                                Преподаватель: {{ day.teacher.name }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% for i in 1..7 %}
+                    <tbody>
+                    <tr>
+                        <td class="notHasSchedule">Предмет : <br> Преподаватель:</td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <td> Среда</td>
+            </tr>
+            </thead>
+            {% for day in wednesday %}
+                {% if day.teacher == null %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="notHasSchedule"> Предмет : <br>Преподаватель:</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br> Преподаватель:
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                {% else %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : <br>
+                                Преподаватель: {{ day.teacher.name }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br>
+                                Преподаватель: {{ day.teacher.name }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% for i in 1..7 %}
+                    <tbody>
+                    <tr>
+                        <td class="notHasSchedule">Предмет : <br> Преподаватель:</td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <td> Четверг</td>
+            </tr>
+            </thead>
+            {% for day in thursday %}
+                {% if day.teacher == null %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="notHasSchedule"> Предмет : <br>Преподаватель:</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br> Преподаватель:
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                {% else %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : <br>
+                                Преподаватель: {{ day.teacher.name }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br>
+                                Преподаватель: {{ day.teacher.name }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% for i in 1..7 %}
+                    <tbody>
+                    <tr>
+                        <td class="notHasSchedule">Предмет : <br> Преподаватель:</td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <td> Пятница</td>
+            </tr>
+            </thead>
+            {% for day in friday %}
+                {% if day.teacher == null %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="notHasSchedule"> Предмет : <br>Преподаватель:</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br> Преподаватель:
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                {% else %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : <br>
+                                Преподаватель: {{ day.teacher.name }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br>
+                                Преподаватель: {{ day.teacher.name }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% for i in 1..7 %}
+                    <tbody>
+                    <tr>
+                        <td class="notHasSchedule">Предмет : <br> Преподаватель:</td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <td> Суббота</td>
+            </tr>
+            </thead>
+            {% for day in saturday %}
+                {% if day.teacher == null %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="notHasSchedule"> Предмет : <br>Преподаватель:</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br> Преподаватель:
+                            </td>
+                        </tr>
+                    {% endif %}
+
+                {% else %}
+                    {% if day.lesson == null %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : <br>
+                                Преподаватель: {{ day.teacher.name }}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="hasSchedule"> Предмет : {{ day.lesson.name }} <br>
+                                Преподаватель: {{ day.teacher.name }}</td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                {% for i in 1..7 %}
+                    <tbody>
+                    <tr>
+                        <td class="notHasSchedule">Предмет : <br> Преподаватель:</td>
+                    </tr>
+                    </tbody>
+                {% endfor %}
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

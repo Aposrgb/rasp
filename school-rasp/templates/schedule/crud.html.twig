@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Schedule index{% endblock %}
+
+{% block body %}
+    <h1>Расписание</h1>
+
+    <div id="schedule">
+        <table class="table">
+            <tbody>
+            {% for schedule in schedules %}
+                <tr>
+                    <td style="font-size: 20px;">{% if schedule.days.count!= 0 %}
+                            {% set bool = true %}
+                            {% for day in schedule.days %}
+                                {% if bool %}
+                                    <a href="{{ path('schedule_get', {'id': schedule.id }) }}">{{ schedule.name }}
+                                        Класс</a>
+                                    {% set bool = false %}
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <a>{{ schedule.name }} Класс</a>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ path('schedule_show', {'id': schedule.id}) }}">show</a>
+                        <a href="{{ path('schedule_edit', {'id': schedule.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td style="font-size: 20px;" colspan="2">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a style="text-align: center;display: block" href="{{ path('schedule_new') }}">Create new</a>
+    <div class="nav">
+        <ul>
+            <li><a href="/schedule/crud">Расписание</a></li>
+            <li><a href="{{ path('days_index') }}">Дни</a></li>
+            <li><a href="{{ path('teacher_index') }}">Учителя</a></li>
+            <li><a href="{{ path('lesson_index') }}">Предметы</a></li>
+        </ul>
+    </div>
+{% endblock %}
